@@ -5,6 +5,12 @@ This script takes backup of any destination path given as an argument
 Usage: ./backup.sh /path/to/folder
 note
 
+function shows_date {
+  echo " Today's date : $(date '+%Y-%m-%d_%H-%M-%S') "
+
+}
+
+function create_backup {
 # Step 1: Get the current timestamp
 timestamp=$(date '+%Y-%m-%d_%H-%M-%S')
 
@@ -16,3 +22,9 @@ zip -r $backup_dir $1
 
 # Step 4: Confirm completion
 echo "Backup Complete"
+
+}
+
+shows_date
+create_backup
+
