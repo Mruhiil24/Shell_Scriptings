@@ -38,5 +38,5 @@ echo "Backup Complete"
 }
 
 shows_date
-create_backup
+create_backup $1
 
