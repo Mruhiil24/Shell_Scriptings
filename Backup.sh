@@ -5,14 +5,26 @@ This script takes backup of any destination path given as an argument
 Usage: ./backup.sh /path/to/folder
 note
 
+# Function to show current date
 function shows_date {
   echo " Today's date : $(date '+%Y-%m-%d_%H-%M-%S') "
 
 }
 
+# Function to return current timestamp
+function get_timestamp {
+  date '+%Y-%m-%d_%H-%M-%S'
+}
+
+# Function to create a backup
 function create_backup {
+
 # Step 1: Get the current timestamp
-timestamp=$(date '+%Y-%m-%d_%H-%M-%S')
+#timestamp=$(date '+%Y-%m-%d_%H-%M-%S')
+
+# Step 1: Call the get_timestamp function and store its result
+timestamp=$(get_timestamp)
+
 
 # Step 2: Set the backup file name and location
 backup_dir="/home/ubuntu/backups/${timestamp}_backup.zip"
